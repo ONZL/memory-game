@@ -105,13 +105,15 @@ const showMessage = document.getElementById('show-message')
 
 // Flip card
   function flipcard(){
-    let cardID= this.getAttribute('data-id')
-    cardschosen.push(cardArray[cardID].name)
-    cardschosenid.push(cardID)
-    this.setAttribute('src',cardArray[cardID].img)
-    if( cardschosen.length===2)
-    {setTimeout(checkForMatch,500)}
+    if (cardsChosen.length < 2) {
+      let cardId = this.getAttribute('data-id')
+      cardsChosen.push(cardArray[cardId].name)
+      cardsChosenId.push(cardId)
+      this.setAttribute('src', cardArray[cardId].img)
+      if (cardsChosen.length ===2) {
+        setTimeout(checkForMatch, 500)
+      }
+    }
   }
-
   createBoard()
 })
