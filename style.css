@@ -4,3 +4,8 @@ flex-wrap: wrap;
 height: 300px;
 width: 400px;
 }
+
+#show-message{
+position: absolute;
+background-color: rgb(158,197,94);
+}

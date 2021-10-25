@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded',() => {
   }
   
 //Check for Matches
+const showMessage = document.getElementById('show-message')
+
   function checkForMatch(){
     let cards= document.querySelectorAll('img')
     const optionOneId=cardschosenid[0]
@@ -77,10 +79,12 @@ document.addEventListener('DOMContentLoaded',() => {
     if(optionOneId == optionTwoId) {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      alert('You have clicked the same image!')
+      showMessage.innerText = 'You have clicked the same image!'
+      setTimeout(() => showMessage.innerText = '', 1000)
     }
     else if (cardschosen[0] === cardschosen[1]) {
-      alert('You found a match')
+      showMessage.innerText = 'You found a match'
+      setTimeout(() => showMessage.innerText = '', 1000)
       cards[optionOneId].setAttribute('src', 'images/white.png')
       cards[optionTwoId].setAttribute('src', 'images/white.png')
       cards[optionOneId].removeEventListener('click', flipcard)
@@ -89,7 +93,8 @@ document.addEventListener('DOMContentLoaded',() => {
     } else {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      alert('Sorry, try again')
+      showMessage.innerText = 'Sorry, try again'
+      setTimeout(() => showMessage.innerText = '', 1000)
     }
 
     cardschosen=[];
