@@ -47,7 +47,13 @@ document.addEventListener('DOMContentLoaded',() => {
       img:'images/pizza.png'
     },
   ]
-  cardArray.sort(()=>{0.5-Math.random()})
+
+  for (let i = cardArray.length -1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i)
+    let k = cardArray[i]
+    cardArray[i] = cardArray[j]
+    cardArray[j] = k
+  
 
   const grid= document.querySelector('.grid')
   const resultDisplay= document.querySelector('#result')
